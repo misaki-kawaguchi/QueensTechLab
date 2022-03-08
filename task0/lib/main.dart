@@ -29,27 +29,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        margin: const EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
-        padding: const EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
-        child: const Text('Text'),
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: Colors.teal,
-          borderRadius: BorderRadius.circular(5.0),
-          border: Border.all(
-            color: Colors.black,
-            width: 3,
-          ),
-        ),
-      )
+      body: ListView.builder(
+        itemCount: 5,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            child: Container(
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    width: 1.0,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+              child: ListTile(
+                leading: const Icon(Icons.star),
+                title: Text('タイトル$index'),
+              ),
+            ),
+            onTap: () => print('pressed'),
+          );
+        },
+      ),
     );
   }
 }
