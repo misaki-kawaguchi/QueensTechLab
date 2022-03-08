@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Container(
         color: Colors.teal,
         margin: const EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
-        transform: Matrix4.rotationZ(0.1),
+        child: const Text('Text'),
       )
     );
   }
