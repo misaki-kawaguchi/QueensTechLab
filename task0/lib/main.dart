@@ -41,6 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
         margin: const EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
         padding: const EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
         child: const Text('Text'),
+        width: 300.0,
+        height: 300.0,
       )
     );
   }
