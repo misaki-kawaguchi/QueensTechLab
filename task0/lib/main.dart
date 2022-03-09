@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: const BoxDecoration(
                 border: Border(
                   bottom: BorderSide(
-                    width: 1.0,
+                    width: 1,
                     color: Colors.grey,
                   ),
                 ),
