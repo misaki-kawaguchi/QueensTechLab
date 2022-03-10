@@ -24,18 +24,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
           color: const Color(0xFF5000B7),
           padding: const EdgeInsets.symmetric(horizontal: 50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Expanded(
-                flex: 2,
-                child: Container(),
-              ),
+              const Spacer(flex: 2),
               const Text(
                 'your\nportfolio',
                 style: TextStyle(
@@ -50,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Form(
                 key: _formKey,
                 child: Column(
-                  children: [
+                  children: <Widget>[
                     TextFormField(
                       controller: _nameController,
                       decoration: const InputDecoration(
@@ -104,11 +101,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
-                    Container(
+                    SizedBox(
                       width: double.infinity,
-                      margin: const EdgeInsets.only(top: 20),
                       child: ElevatedButton(
                         onPressed: _login,
                         child: const Text('ログイン'),
@@ -121,10 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-              Expanded(
-                flex: 1,
-                child: Container(),
-              ),
+              const Spacer(flex: 1),
             ],
           ),
         ),
