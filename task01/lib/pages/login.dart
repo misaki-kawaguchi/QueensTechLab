@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:task01/widgets/login_form_field.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -10,15 +11,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final _formKey = GlobalKey<FormState>();
-  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
   void _login() {
     if (!_formKey.currentState!.validate()) {
       return;
     }
-    print(_nameController.text);
-    print(_passwordController.text);
     print('ログインできました！');
   }
 
@@ -48,14 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 key: _formKey,
                 child: Column(
                   children: <Widget>[
-                    TextFormField(
-                      controller: _nameController,
-                      decoration: const InputDecoration(
-                        hintText: 'Email address',
-                        fillColor: Colors.white,
-                        filled: true,
-                        border: OutlineInputBorder(),
-                      ),
+                    LoginFormField(
+                      controller: _emailController,
+                      hintText: 'Email address',
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
                           return 'メールアドレスを入力してください。';
@@ -66,15 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     const SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
+                    LoginFormField(
                       controller: _passwordController,
-                      obscureText: true,
-                      decoration: const InputDecoration(
-                        hintText: 'Password',
-                        fillColor: Colors.white,
-                        filled: true,
-                        border: OutlineInputBorder(),
-                      ),
+                      hintText: 'Password',
                       validator: (String? value) {
                         if (value == null || value.length < 5) {
                           return '5文字以上のパスワードを入力してください。';
@@ -127,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
-    _nameController.dispose();
+    _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
