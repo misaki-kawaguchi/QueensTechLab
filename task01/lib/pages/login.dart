@@ -70,18 +70,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         return null;
                       },
                     ),
-                    Container(
-                      width: double.infinity,
-                      margin: const EdgeInsets.only(top: 15),
-                      child: RichText(
-                        textAlign: TextAlign.right,
-                        text: TextSpan(
-                          text: 'Forgot your password?',
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              print('パスワード設定画面に飛ぶ');
-                            },
-                          style: const TextStyle(
+                    TextButton(
+                      onPressed: () => print('パスワード設定画面に飛ぶ'),
+                      child: const SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          'Forgot your password?',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
                             color: Colors.white,
                             fontSize: 12,
                           ),
