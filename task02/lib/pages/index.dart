@@ -3,6 +3,7 @@ import 'package:task02/widgets/common_drawer.dart';
 import 'package:task02/widgets/common_app_bar.dart';
 import 'package:task02/widgets/common_button.dart';
 import 'package:task02/routes.dart';
+import 'package:task02/widgets/exhibition_info.dart';
 
 class IndexPage extends StatefulWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -12,7 +13,6 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
-
   void _planButton() {
     Navigator.of(context).pushNamed(planYourVisitPage);
   }
@@ -51,54 +51,7 @@ class _IndexPageState extends State<IndexPage> {
                   const Spacer(flex: 4),
                   CommonButton(text: 'Plan Your Visit', onPressed: _planButton),
                   const Spacer(flex: 2),
-                  Row(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Row(
-                          children: const [
-                            Icon(
-                              Icons.place,
-                              color: Color(0xFFFF473A),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 10),
-                              child: Text(
-                                '151 3rd St',
-                                style: TextStyle(
-                                  color: Color(0xFFFF473A),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Row(
-                          children: const [
-                            Icon(
-                              Icons.watch_later,
-                              color: Color(0xFFFF473A),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 10),
-                              child: Text(
-                                'Open today',
-                                style: TextStyle(
-                                  color: Color(0xFFFF473A),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  const ExhibitionInfo(),
                   const Spacer(flex: 2),
                 ],
               ),
@@ -109,3 +62,4 @@ class _IndexPageState extends State<IndexPage> {
     );
   }
 }
+
