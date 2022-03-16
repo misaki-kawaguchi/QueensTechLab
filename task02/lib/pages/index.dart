@@ -24,9 +24,12 @@ class _IndexPageState extends State<IndexPage> {
       endDrawer: const AppBarDrawer(),
       body: Column(
         children: [
-          Image.asset(
-            'images/mainvisual.jpg',
-            fit: BoxFit.cover,
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 300),
+            child: Image.asset(
+              'images/mainvisual.jpg',
+              fit: BoxFit.cover,
+            ),
           ),
           Expanded(
             child: Padding(
