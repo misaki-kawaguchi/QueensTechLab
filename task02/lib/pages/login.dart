@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task02/widgets/login_form_field.dart';
 import 'package:task02/routes.dart';
+import 'package:task02/widgets/common_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -87,17 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 40,
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: _login,
-                        child: const Text('ログイン'),
-                        style: ElevatedButton.styleFrom(
-                          primary: const Color(0xFFFF473A),
-                          fixedSize: const Size.fromHeight(50),
-                        ),
-                      ),
-                    ),
+                    CommonButton(text: 'ログイン', onPressed: _login),
                   ],
                 ),
               ),
