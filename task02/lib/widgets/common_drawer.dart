@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task02/routes.dart';
 
 class AppBarDrawer extends StatelessWidget {
   const AppBarDrawer({
@@ -10,38 +11,41 @@ class AppBarDrawer extends StatelessWidget {
     return Drawer(
       backgroundColor: const Color(0xFF181828),
       child: ListView(
-        children: const <Widget>[
+        children: <Widget>[
           ListTile(
-            title: Text("Exhibitions & Events"),
+            title: const Text("Exhibitions & Events"),
             textColor: Colors.white70,
-            leading: Icon(Icons.event),
+            leading: const Icon(Icons.event),
             iconColor: Colors.white70,
+            onTap: () {
+              Navigator.of(context).pushNamed(exhibitionsPage);
+            },
           ),
-          ListTile(
+          const ListTile(
             title: Text("Artists & Artworks"),
             textColor: Colors.white70,
             leading: Icon(Icons.palette),
             iconColor: Colors.white70,
           ),
-          ListTile(
+          const ListTile(
             title: Text("Collections"),
             textColor: Colors.white70,
             leading: Icon(Icons.collections),
             iconColor: Colors.white70,
           ),
-          ListTile(
+          const ListTile(
             title: Text("Plan Your Visit"),
             textColor: Colors.white70,
             leading: Icon(Icons.confirmation_number),
             iconColor: Colors.white70,
           ),
-          ListTile(
+          const ListTile(
             title: Text("Become a Member"),
             textColor: Colors.white70,
             leading: Icon(Icons.remember_me),
             iconColor: Colors.white70,
           ),
-          ListTile(
+          const ListTile(
             title: Text("Shop"),
             textColor: Colors.white70,
             leading: Icon(Icons.shopping_bag),
