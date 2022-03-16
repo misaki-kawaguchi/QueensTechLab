@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:task02/widgets/login_form_field.dart';
+import 'package:task02/routes.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -17,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!_formKey.currentState!.validate()) {
       return;
     }
-    print('ログインできました！');
+    Navigator.of(context).pushNamed(indexPage);
   }
 
   @override
