@@ -13,7 +13,7 @@ class IndexPage extends StatefulWidget {
 }
 
 class _IndexPageState extends State<IndexPage> {
-  void _planButton() {
+  void _goToPlanPage() {
     Navigator.of(context).pushNamed(planYourVisitPage);
   }
 
@@ -39,7 +39,10 @@ class _IndexPageState extends State<IndexPage> {
                 children: <Widget>[
                   const Text(
                     'EXHIBITION',
-                    style: TextStyle(color: Colors.black26, fontSize: 14),
+                    style: TextStyle(
+                      color: Colors.black26,
+                      fontSize: 14,
+                    ),
                   ),
                   const Text(
                     'MASTERS\nOLD AND\nNEW',
@@ -49,7 +52,10 @@ class _IndexPageState extends State<IndexPage> {
                     ),
                   ),
                   const Spacer(flex: 4),
-                  CommonButton(text: 'Plan Your Visit', onPressed: _planButton),
+                  CommonButton(
+                    text: 'Plan Your Visit',
+                    onPressed: _goToPlanPage,
+                  ),
                   const Spacer(flex: 2),
                   const ExhibitionInfo(),
                   const Spacer(flex: 2),
@@ -62,4 +68,3 @@ class _IndexPageState extends State<IndexPage> {
     );
   }
 }
-
