@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:task02/routes.dart';
 
-class AppBarDrawer extends StatelessWidget {
-  const AppBarDrawer({
+class CommonDrawer extends StatefulWidget {
+  const CommonDrawer({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<CommonDrawer> createState() => _CommonDrawerState();
+}
+
+class _CommonDrawerState extends State<CommonDrawer> {
+
+  void _goToExhibitionsPage() {
+    Navigator.of(context).pushNamed(exhibitionsPage);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,47 +22,57 @@ class AppBarDrawer extends StatelessWidget {
       backgroundColor: const Color(0xFF181828),
       child: ListView(
         children: <Widget>[
-          ListTile(
-            title: const Text("Exhibitions & Events"),
-            textColor: Colors.white70,
-            leading: const Icon(Icons.event),
-            iconColor: Colors.white70,
-            onTap: () {
-              Navigator.of(context).pushNamed(exhibitionsPage);
-            },
+          CommonDrawerListTile(
+            text: "Exhibitions & Events",
+            icon: Icons.event,
+            onTap: _goToExhibitionsPage,
           ),
-          const ListTile(
-            title: Text("Artists & Artworks"),
-            textColor: Colors.white70,
-            leading: Icon(Icons.palette),
-            iconColor: Colors.white70,
+          const CommonDrawerListTile(
+            text: "Artists & Artworks",
+            icon: Icons.palette,
           ),
-          const ListTile(
-            title: Text("Collections"),
-            textColor: Colors.white70,
-            leading: Icon(Icons.collections),
-            iconColor: Colors.white70,
+          const CommonDrawerListTile(
+            text: "Collections",
+            icon: Icons.collections,
           ),
-          const ListTile(
-            title: Text("Plan Your Visit"),
-            textColor: Colors.white70,
-            leading: Icon(Icons.confirmation_number),
-            iconColor: Colors.white70,
+          const CommonDrawerListTile(
+            text: "Plan Your Visit",
+            icon: Icons.confirmation_number,
           ),
-          const ListTile(
-            title: Text("Become a Member"),
-            textColor: Colors.white70,
-            leading: Icon(Icons.remember_me),
-            iconColor: Colors.white70,
+          const CommonDrawerListTile(
+            text: "Become a Member",
+            icon: Icons.remember_me,
           ),
-          const ListTile(
-            title: Text("Shop"),
-            textColor: Colors.white70,
-            leading: Icon(Icons.shopping_bag),
-            iconColor: Colors.white70,
+          const CommonDrawerListTile(
+            text: "Shop",
+            icon: Icons.shopping_bag,
           ),
         ],
       ),
+    );
+  }
+}
+
+class CommonDrawerListTile extends StatelessWidget {
+  const CommonDrawerListTile({
+    Key? key,
+    required this.text,
+    required this.icon,
+    this.onTap,
+  }) : super(key: key);
+
+  final String text;
+  final IconData icon;
+  final Function()? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(text),
+      textColor: Colors.white70,
+      leading: Icon(icon),
+      iconColor: Colors.white70,
+      onTap: onTap,
     );
   }
 }

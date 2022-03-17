@@ -9,7 +9,7 @@ class PlanYourVisitPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: CommonAppBar(),
-      endDrawer: AppBarDrawer(),
+      endDrawer: CommonDrawer(),
       body: Text('Plan Your Visit'),
     );
   }

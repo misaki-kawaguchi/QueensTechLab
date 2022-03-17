@@ -10,7 +10,7 @@ class ExhibitionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppBar(),
-      endDrawer: const AppBarDrawer(),
+      endDrawer: const CommonDrawer(),
       body: GridView.count(
         padding: const EdgeInsets.all(10),
         crossAxisCount: 2,

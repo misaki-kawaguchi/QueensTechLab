@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task02/routes.dart';
 import 'package:task02/widgets/common_drawer.dart';
 import 'package:task02/widgets/common_app_bar.dart';
 import 'package:task02/widgets/common_button.dart';
-import 'package:task02/routes.dart';
 import 'package:task02/widgets/exhibition_info.dart';
 
 class IndexPage extends StatefulWidget {
@@ -21,7 +21,7 @@ class _IndexPageState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppBar(),
-      endDrawer: const AppBarDrawer(),
+      endDrawer: const CommonDrawer(),
       body: Column(
         children: [
           ConstrainedBox(
