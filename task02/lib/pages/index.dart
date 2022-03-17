@@ -33,7 +33,7 @@ class _IndexPageState extends State<IndexPage> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(15, 20, 15, 0),
+              padding: const EdgeInsets.only(left: 15, top: 20, right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -44,6 +44,9 @@ class _IndexPageState extends State<IndexPage> {
                       fontSize: 14,
                     ),
                   ),
+                  const SizedBox(
+                    height: 5,
+                  ),
                   const Text(
                     'MASTERS\nOLD AND\nNEW',
                     style: TextStyle(
@@ -51,14 +54,14 @@ class _IndexPageState extends State<IndexPage> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  const Spacer(flex: 4),
+                  const Spacer(flex: 3),
                   CommonButton(
                     text: 'Plan Your Visit',
                     onPressed: _goToPlanPage,
                   ),
-                  const Spacer(flex: 2),
+                  const Spacer(flex: 1),
                   const ExhibitionInfo(),
-                  const Spacer(flex: 2),
+                  const Spacer(flex: 1),
                 ],
               ),
             ),

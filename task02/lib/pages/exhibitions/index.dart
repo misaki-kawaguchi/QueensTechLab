@@ -9,7 +9,7 @@ class ExhibitionsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CommonAppBar(),
+      appBar: CommonAppBar(),
       endDrawer: const CommonDrawer(),
       body: GridView.count(
         padding: const EdgeInsets.all(10),
@@ -18,27 +18,33 @@ class ExhibitionsPage extends StatelessWidget {
         mainAxisSpacing: 10,
         childAspectRatio: 0.95,
         shrinkWrap: true,
-        children: List.generate(50, (index) {
-          var imgNumber = Random().nextInt(6) + 1;
-          var assetsImage = "images/exhibition" + imgNumber.toString() + ".jpg";
+        children: List.generate(
+          50,
+          (index) {
+            var imgNumber = Random().nextInt(6) + 1;
+            var assetsImage =
+                "images/exhibition" + imgNumber.toString() + ".jpg";
 
-          return Column(children: <Widget>[
-            Image.asset(
-              assetsImage,
-              fit: BoxFit.cover,
-              height: 150.0,
-              width: double.infinity,
-            ),
-            Container(
-              width: double.infinity,
-              margin: const EdgeInsets.only(top: 10),
-              child: const Text(
-                'sample',
-                textAlign: TextAlign.left,
-              ),
-            ),
-          ]);
-        }),
+            return Column(
+              children: <Widget>[
+                Image.asset(
+                  assetsImage,
+                  fit: BoxFit.cover,
+                  height: 150.0,
+                  width: double.infinity,
+                ),
+                Container(
+                  width: double.infinity,
+                  margin: const EdgeInsets.only(top: 10),
+                  child: const Text(
+                    'sample',
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

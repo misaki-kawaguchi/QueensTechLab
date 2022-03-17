@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  Size get preferredSize => const Size.fromHeight(55);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   const CommonAppBar({
     Key? key,
   }) : super(key: key);
