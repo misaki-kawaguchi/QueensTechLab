@@ -5,14 +5,14 @@ import 'package:task02/widgets/common_app_bar.dart';
 import 'package:task02/widgets/common_button.dart';
 import 'package:task02/widgets/exhibition_info.dart';
 
-class IndexPage extends StatefulWidget {
-  const IndexPage({Key? key}) : super(key: key);
+class ExhibitionsInfoPage extends StatefulWidget {
+  const ExhibitionsInfoPage({Key? key}) : super(key: key);
 
   @override
-  State<IndexPage> createState() => _IndexPageState();
+  State<ExhibitionsInfoPage> createState() => _ExhibitionsInfoPageState();
 }
 
-class _IndexPageState extends State<IndexPage> {
+class _ExhibitionsInfoPageState extends State<ExhibitionsInfoPage> {
   void _goToPlanPage() {
     Navigator.of(context).pushNamed(planYourVisitPage);
   }
@@ -41,7 +41,6 @@ class _IndexPageState extends State<IndexPage> {
                     'EXHIBITION',
                     style: TextStyle(
                       color: Colors.black26,
-                      fontSize: 14,
                     ),
                   ),
                   const SizedBox(

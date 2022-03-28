@@ -11,43 +11,49 @@ class CommonDrawer extends StatefulWidget {
 }
 
 class _CommonDrawerState extends State<CommonDrawer> {
-
   void _goToExhibitionsPage() {
     Navigator.of(context).pushNamed(exhibitionsPage);
   }
 
   @override
   Widget build(BuildContext context) {
+    List drawerItems = [
+      {
+        "text": "Exhibitions & Events",
+        "icon": Icons.event,
+        "onTap": _goToExhibitionsPage,
+      },
+      {
+        "text": "Artists & Artworks",
+        "icon": Icons.palette,
+      },
+      {
+        "text": "Collections",
+        "icon": Icons.collections,
+      },
+      {
+        "text": "Plan Your Visit",
+        "icon": Icons.confirmation_number,
+      },
+      {
+        "text": "Become a Member",
+        "icon": Icons.remember_me,
+      },
+      {
+        "text": "Shop",
+        "icon": Icons.shopping_bag,
+      },
+    ];
+
     return Drawer(
       backgroundColor: const Color(0xFF181828),
-      child: ListView(
-        children: <Widget>[
-          CommonDrawerListTile(
-            text: "Exhibitions & Events",
-            icon: Icons.event,
-            onTap: _goToExhibitionsPage,
-          ),
-          const CommonDrawerListTile(
-            text: "Artists & Artworks",
-            icon: Icons.palette,
-          ),
-          const CommonDrawerListTile(
-            text: "Collections",
-            icon: Icons.collections,
-          ),
-          const CommonDrawerListTile(
-            text: "Plan Your Visit",
-            icon: Icons.confirmation_number,
-          ),
-          const CommonDrawerListTile(
-            text: "Become a Member",
-            icon: Icons.remember_me,
-          ),
-          const CommonDrawerListTile(
-            text: "Shop",
-            icon: Icons.shopping_bag,
-          ),
-        ],
+      child: ListView.builder(
+        itemCount: drawerItems.length,
+        itemBuilder: (context, index) => CommonDrawerListTile(
+          text: drawerItems[index]['text'],
+          icon: drawerItems[index]['icon'],
+          onTap: drawerItems[index]['onTap'],
+        ),
       ),
     );
   }

@@ -1,16 +1,16 @@
 import 'package:task02/pages/login.dart';
-import 'package:task02/pages/index.dart';
-import 'package:task02/pages/exhibitions/index.dart';
-import 'package:task02/pages/plan/index.dart';
+import 'package:task02/pages/exhibitions_info/home.dart';
+import 'package:task02/pages/exhibitions/home.dart';
+import 'package:task02/pages/plan/home.dart';
 
 const loginPage ='/';
-const indexPage = '/index';
-const exhibitionsPage = '/exhibitions/index';
-const planYourVisitPage = '/plan/index';
+const exhibitionsInfoPage = '/exhibitions_info/home';
+const exhibitionsPage = '/exhibitions/home';
+const planYourVisitPage = '/plan/home';
 
 final routes = {
   loginPage: (context) => const LoginPage(),
-  indexPage: (context) => const IndexPage(),
+  exhibitionsInfoPage: (context) => const ExhibitionsInfoPage(),
   exhibitionsPage: (context) => const ExhibitionsPage(),
   planYourVisitPage: (context) => const PlanYourVisitPage(),
 };

@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
     if (!_formKey.currentState!.validate()) {
       return;
     }
-    Navigator.of(context).pushNamed(indexPage);
+    Navigator.of(context).pushNamed(exhibitionsInfoPage);
   }
 
   @override

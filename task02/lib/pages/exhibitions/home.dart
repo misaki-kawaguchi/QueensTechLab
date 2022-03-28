@@ -9,7 +9,7 @@ class ExhibitionsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CommonAppBar(),
+      appBar: const CommonAppBar(),
       endDrawer: const CommonDrawer(),
       body: GridView.count(
         padding: const EdgeInsets.all(10),
@@ -26,20 +26,17 @@ class ExhibitionsPage extends StatelessWidget {
                 "images/exhibition" + imgNumber.toString() + ".jpg";
 
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Image.asset(
                   assetsImage,
                   fit: BoxFit.cover,
-                  height: 150.0,
+                  height: 150,
                   width: double.infinity,
                 ),
-                Container(
-                  width: double.infinity,
-                  margin: const EdgeInsets.only(top: 10),
-                  child: const Text(
-                    'sample',
-                    textAlign: TextAlign.left,
-                  ),
+                const SizedBox(height: 10),
+                const Text(
+                  'sample',
                 ),
               ],
             );
