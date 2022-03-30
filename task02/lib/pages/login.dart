@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:task02/widgets/login_form_field.dart';
+import 'package:task02/routes.dart';
+import 'package:task02/widgets/common_button.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -17,15 +19,15 @@ class _MyHomePageState extends State<MyHomePage> {
     if (!_formKey.currentState!.validate()) {
       return;
     }
-    print('ログインできました！');
+    Navigator.of(context).pushNamed(exhibitionsInfoPage);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF5000B7),
       body: SafeArea(
         child: Container(
-          color: const Color(0xFF5000B7),
           padding: const EdgeInsets.symmetric(horizontal: 50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,17 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     const SizedBox(
                       height: 40,
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: _login,
-                        child: const Text('ログイン'),
-                        style: ElevatedButton.styleFrom(
-                          primary: const Color(0xFFFF473A),
-                          fixedSize: const Size.fromHeight(50),
-                        ),
-                      ),
-                    ),
+                    CommonButton(text: 'ログイン', onPressed: _login),
                   ],
                 ),
               ),
